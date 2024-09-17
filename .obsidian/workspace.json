@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "task.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "task.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "task.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "task.md"
               }
             }
           }
@@ -186,6 +186,8 @@
   },
   "active": "a9249a7e9ad60df3",
   "lastOpenFiles": [
+    "tasks/Задание 2. Singleton.md",
+    "README.md",
     "backup/me/буквы/singleton.md",
     "backup/me/буквы/статистический класс или синглтон.md",
     "backup/me/буквы/Шаблоны проектирования Банды четырёх (GoF).md",
@@ -211,8 +213,6 @@
     "Letterboxd Diary.md",
     "backup/places",
     "backup/home/💔 orphan/Ryan Gosling.md",
-    "backup/people/Kesha.md",
-    "backup/me/буквы/Books.md",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf.crdownload",
     "backup/files/photo_2024-09-11_00-18-52.jpg",
