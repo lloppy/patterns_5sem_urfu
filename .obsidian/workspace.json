@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6589be9251edbb6e",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "tasks/lessons/singleton.pdf"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -38,7 +49,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "task.md",
+                "file": "tasks/lessons/singleton.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "task.md",
+                "file": "tasks/lessons/singleton.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "task.md"
+                "file": "tasks/lessons/singleton.pdf"
               }
             }
           }
@@ -184,8 +195,9 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "a9249a7e9ad60df3",
+  "active": "6589be9251edbb6e",
   "lastOpenFiles": [
+    "task.md",
     "tasks/Задание 2. Singleton.md",
     "README.md",
     "backup/me/буквы/singleton.md",
@@ -212,7 +224,6 @@
     "backup/me/видео/Holiday Inn.md",
     "Letterboxd Diary.md",
     "backup/places",
-    "backup/home/💔 orphan/Ryan Gosling.md",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf.crdownload",
     "backup/files/photo_2024-09-11_00-18-52.jpg",
