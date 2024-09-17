@@ -171,6 +171,9 @@
   },
   "active": "7af34a3013d9fec2",
   "lastOpenFiles": [
+    "tasks/lessons/singleton.pdf",
+    "tasks/Задание 2. Singleton.md",
+    "task.md",
     "tasks/code/fantasygame/util/Traversable.java",
     "tasks/code/fantasygame/util/ShowTraverser.java",
     "tasks/code/fantasygame/util/MagicTraverser.java",
@@ -180,10 +183,6 @@
     "tasks/code/fantasygame/util",
     "tasks/code/fantasygame/userinterface/ports/SimplePort.java",
     "tasks/code/fantasygame/userinterface/ports/ShowPort.java",
-    "tasks/code/fantasygame/userinterface/ports/Port.java",
-    "tasks/code/fantasygame/userinterface/ports/PortContents.java",
-    "tasks/Задание 2. Singleton.md",
-    "task.md",
     "tasks/lessons/Обозначения.md",
     "README.md"
   ]
