@@ -1,0 +1,138 @@
+{
+  "targetAttributes": [
+    "type",
+    "cssclass",
+    "kanban-plugin"
+  ],
+  "targetTags": true,
+  "getFromInlineField": true,
+  "enableTabHeader": true,
+  "activateSnippet": true,
+  "enableEditor": true,
+  "enableFileList": true,
+  "enableBacklinks": true,
+  "enableQuickSwitcher": true,
+  "enableSuggestor": true,
+  "selectors": [
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "book",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "5a3d-8ba8",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "course",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "c770-b280",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "article",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "a07d-d402",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "video",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "70f5-b6ee",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "movie",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "de82-6de4",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "term",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "fbc8-f7b4",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "people",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "6bb4-a3f4",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "android",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "1dc8-9be8",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "idea",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "2516-053b",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    },
+    {
+      "type": "attribute",
+      "name": "type",
+      "value": "places",
+      "matchCaseSensitive": false,
+      "match": "exact",
+      "uid": "bc28-6c9e",
+      "selectText": true,
+      "selectAppend": true,
+      "selectPrepend": true,
+      "selectBackground": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "backup/templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "backup/periodic/daily",
+      "template": "backup/templates/00 daily.md"
+    },
+    {
+      "folder": "backup/periodic/weekly",
+      "template": "backup/templates/00 weekly.md"
+    },
+    {
+      "folder": "backup/people",
+      "template": "backup/templates/00 people template.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [],
+  "startup_templates": [
+    ""
+  ]
+}

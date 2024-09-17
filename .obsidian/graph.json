@@ -1,0 +1,65 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "line:(\"type: book\")",
+      "color": {
+        "a": 1,
+        "rgb": 14048348
+      }
+    },
+    {
+      "query": "line:(\"type: movie\")",
+      "color": {
+        "a": 1,
+        "rgb": 9719514
+      }
+    },
+    {
+      "query": "line:(\"type: term\")",
+      "color": {
+        "a": 1,
+        "rgb": 10724259
+      }
+    },
+    {
+      "query": "line:(\"type: people\")",
+      "color": {
+        "a": 1,
+        "rgb": 3686399
+      }
+    },
+    {
+      "query": "line:(\"type: android\")",
+      "color": {
+        "a": 1,
+        "rgb": 53577
+      }
+    },
+    {
+      "query": "line:(\"type: idea\")",
+      "color": {
+        "a": 1,
+        "rgb": 16775214
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 0.97318339100346,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.18089381260503445,
+  "close": true
+}

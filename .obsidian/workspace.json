@@ -1,126 +1,39 @@
 {
   "main": {
-    "id": "c20626e39560fa93",
+    "id": "7122de127ff2b81f",
     "type": "split",
     "children": [
       {
-        "id": "81eba194af745b32",
+        "id": "c7b22e71f0cf1265",
         "type": "tabs",
         "children": [
           {
-            "id": "f258b0f201f42176",
+            "id": "a9249a7e9ad60df3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "tasks/Задание 2. Singleton.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7af34a3013d9fec2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "task.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e76f79543d6cf472",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "tasks/Задание 2. Singleton.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4cffcd4082877f10",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "tasks/lessons/singleton.pdf"
-              }
-            }
-          }
-        ],
-        "currentTab": 1
-      }
-    ],
-    "direction": "vertical"
-  },
-  "left": {
-    "id": "992a4d21dd87a726",
-    "type": "split",
-    "children": [
-      {
-        "id": "de97f30684a104cb",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "19f47c3dfdf1ab6a",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "08bdbb4f977f9ea6",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "fd5d9332cf40a9e7",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
+              "type": "empty",
               "state": {}
             }
           }
         ]
       }
     ],
-    "direction": "horizontal",
-    "width": 300
+    "direction": "vertical"
   },
-  "right": {
-    "id": "b7e13e4c822531b4",
+  "left": {
+    "id": "5e5b1cebb68a5e9f",
     "type": "split",
     "children": [
       {
-        "id": "0aeb0d7597604330",
+        "id": "2d44f78c3e62aa3b",
         "type": "tabs",
         "children": [
           {
-            "id": "4856974be62dbd4e",
+            "id": "011185717d6a3794",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "task.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,19 +45,72 @@
             }
           },
           {
-            "id": "5337f0a40e0ee2c6",
+            "id": "0648334cbc86e6d7",
             "type": "leaf",
             "state": {
-              "type": "outgoing-link",
+              "type": "file-explorer",
               "state": {
-                "file": "task.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "sortOrder": "alphabetical"
               }
             }
           },
           {
-            "id": "fc05e87d5dbfe1e9",
+            "id": "8ab05810f0a7d277",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#паттерны",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ebcdd849b99c2bb1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "123ed7af303b44d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "8208a89cc12a190a",
+        "type": "tabs",
+        "dimension": 49.861111111111114,
+        "children": [
+          {
+            "id": "521a84a1ff87e5dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "f23f8ad709d4c740",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "deed4a2106b8d753",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -155,47 +121,109 @@
             }
           },
           {
-            "id": "edfc9fe8dc719eab",
+            "id": "9bb44d5c4472ac75",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "e2c177d7e1e59f43",
+        "type": "tabs",
+        "dimension": 50.138888888888886,
+        "children": [
+          {
+            "id": "99d3a092d60475df",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "3e8e974db2efaadb",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "task.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
+      "obsidian-git:Open Git source control": true,
+      "switcher:Open quick switcher": true,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "daily-notes:Open today's daily note": true,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": true,
+      "templater-obsidian:Templater": true,
+      "homepage:Open homepage": true,
+      "dbfolder:Create a new database table": true,
+      "periodic-notes:Open today": false
     }
   },
-  "active": "7af34a3013d9fec2",
+  "active": "a9249a7e9ad60df3",
   "lastOpenFiles": [
-    "tasks/Задание 2. Singleton.md",
-    "task.md",
-    "tasks/lessons/singleton.pdf",
-    "tasks/code/fantasygame/util/Traversable.java",
-    "tasks/code/fantasygame/util/ShowTraverser.java",
-    "tasks/code/fantasygame/util/MagicTraverser.java",
-    "tasks/code/fantasygame/util/LazyRandom.java",
-    "tasks/code/fantasygame/util/GameTraverser.java",
-    "tasks/code/fantasygame/util/FileScanner.java",
-    "tasks/code/fantasygame/util",
-    "tasks/code/fantasygame/userinterface/ports/SimplePort.java",
-    "tasks/code/fantasygame/userinterface/ports/ShowPort.java",
-    "tasks/lessons/Обозначения.md",
-    "README.md"
+    "backup/me/буквы/singleton.md",
+    "backup/me/буквы/статистический класс или синглтон.md",
+    "backup/me/буквы/Шаблоны проектирования Банды четырёх (GoF).md",
+    "backup/me/буквы/Android.md",
+    "backup/home/🏠 homepage.md",
+    "backup/me/видео/Мюзиклы.md",
+    "backup/me/видео/Falsettos.md",
+    "backup/home/💔 orphan/Andrew Rannells.md",
+    "backup/home/💔 orphan/Robbie Williams.md",
+    "backup/home/💔 orphan/Francis Sinatra.md",
+    "backup/people/Stephen Sondheim.md",
+    "backup/people/VivziePop.md",
+    "backup/people/James Lapine.md",
+    "backup/me/видео/Into the Woods.md",
+    "backup/me/буквы/Quakers.md",
+    "backup/me/видео/Passion.md",
+    "backup/people/Christian Borle.md",
+    "backup/me/видео/Movies.md",
+    "backup/templates/00 movie template.md",
+    "backup/places/Carnegie Mellon School of Drama.md",
+    "backup/me/видео/Hazbin Hotel.md",
+    "backup/me/видео/Holiday Inn.md",
+    "Letterboxd Diary.md",
+    "backup/places",
+    "backup/home/💔 orphan/Ryan Gosling.md",
+    "backup/people/Kesha.md",
+    "backup/me/буквы/Books.md",
+    "backup/files/Matematika_v_mashinnom_obuchenii.pdf",
+    "backup/files/Matematika_v_mashinnom_obuchenii.pdf.crdownload",
+    "backup/files/photo_2024-09-11_00-18-52.jpg",
+    "backup/files/photo_2024-09-11_00-18-57.jpg",
+    "backup/files/Pasted image 20240910212722.png",
+    "Untitled.canvas",
+    "backup/files/ievetrov_ru.pdf",
+    "backup/files/Pasted image 20240910021620.png",
+    "backup/files/Pasted image 20240910021607.png",
+    "backup/files/Pasted image 20240910021156.png",
+    "backup/files/thumb-1920-1168791.jpg",
+    "backup/files/photo_2024-09-10_01-49-44.jpg",
+    "backup/files/Pasted image 20240908235351.png",
+    "backup/files/photo_2024-09-10_01-48-14.jpg",
+    "backup/periodic/templates",
+    "backup/templates/bin",
+    "backup/home/💔 orphan",
+    "backup/people",
+    "Old Homepage Source Code/sharetype.css",
+    "Old Homepage Source Code/homepage setting.css"
   ]
 }

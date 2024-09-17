@@ -1,0 +1,14 @@
+{
+  "immediateReplace": true,
+  "suggester": true,
+  "historyPriority": true,
+  "historyLimit": 100,
+  "history": [
+    ":sparkles:",
+    ":cry:",
+    ":two_hearts:",
+    ":house:",
+    ":book:",
+    ":people_holding_hands:"
+  ]
+}

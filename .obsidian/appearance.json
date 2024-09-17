@@ -1,3 +1,8 @@
 {
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "dashboard",
+    "supercharged-links-gen",
+    "dashboard-ReadLineLength"
+  ]
 }
