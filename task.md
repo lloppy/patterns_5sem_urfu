@@ -36,6 +36,8 @@ https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/Di
 -  конструктор Enum всегда приватный (private)
 
 
+<br>
+
 Почему я **переписала** именно этот класс (GearEffects https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearEffects.java) как Singleton (не хранит состояние):
 - у класса GearEffects был приватный конструктор
 - имел статические методы
