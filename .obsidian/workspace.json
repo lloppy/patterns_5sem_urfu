@@ -23,14 +23,15 @@
             "id": "6589be9251edbb6e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "tasks/lessons/singleton.pdf"
+                "file": "tasks/Singleton. Упражнение 2. Работа из класса.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -49,7 +50,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "tasks/lessons/singleton.pdf",
+                "file": "task.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "tasks/lessons/singleton.pdf",
+                "file": "task.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "tasks/lessons/singleton.pdf"
+                "file": "task.md"
               }
             }
           }
@@ -195,10 +196,11 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "6589be9251edbb6e",
+  "active": "a9249a7e9ad60df3",
   "lastOpenFiles": [
+    "tasks/Singleton. Упражнение 2. Работа из класса.md",
     "task.md",
-    "tasks/Задание 2. Singleton.md",
+    "tasks/lessons/singleton.pdf",
     "README.md",
     "backup/me/буквы/singleton.md",
     "backup/me/буквы/статистический класс или синглтон.md",
@@ -222,7 +224,6 @@
     "backup/places/Carnegie Mellon School of Drama.md",
     "backup/me/видео/Hazbin Hotel.md",
     "backup/me/видео/Holiday Inn.md",
-    "Letterboxd Diary.md",
     "backup/places",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf.crdownload",
@@ -242,7 +243,6 @@
     "backup/templates/bin",
     "backup/home/💔 orphan",
     "backup/people",
-    "Old Homepage Source Code/sharetype.css",
-    "Old Homepage Source Code/homepage setting.css"
+    "Old Homepage Source Code/sharetype.css"
   ]
 }

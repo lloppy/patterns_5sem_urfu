@@ -1,15 +1,9 @@
+**Задание 2. Singleton** 
 
-1. Переписанный класс:
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearEffects.java
+Признаки, по которым уже **имеющиеся ранее** классы опознанны как singleton:
+- Weird kind of singletons -- enum constants 
 
-
-
-\+ уже реализованные классы - enum\`ы ("Weird kind of singletons -- enum constants").
-
-- enum в джаве - единственный экземпляр
-- финальный и статический (enum = static final)
-- есть геттер - можно обратиться через точку (.), чтобы получить значение
--  конструктор Enum всегда приватный (private) (https://dzen.ru/a/ZIAhkdyUrkQy82Ql)
+Список этих enum классов :
 
 https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearSpecials.java
 
@@ -32,3 +26,19 @@ https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/ru
 https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/userdecisions/UserDecision.java
 
 https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/Direction.java
+
+Пояснение: 
+- enum в джаве - единственный экземпляр
+- финальный и статический (enum = static final)
+- есть геттер - можно обратиться через точку (.), чтобы получить значение
+-  конструктор Enum всегда приватный (private)
+
+
+<br>
+
+Почему я **переписала** именно этот класс (GearEffects https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearEffects.java) как Singleton (не хранит состояние):
+- у класса GearEffects был приватный конструктор
+- имел статические методы
+Я добавита инстанс и геттер для получения значение инстанса.
+
+

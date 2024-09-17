@@ -1,46 +1,18 @@
 ## **Задание 1**
 
-## **Задание 2. Singleton** я поняла что я перепутала задания, я перепишу задание 2 до среды по моему проекту
+## **Задание 2. Singleton** 
 
-Признаки, по которым уже **имеющиеся ранее** классы опознанны как singleton:
-- Weird kind of singletons -- enum constants 
+[Page not found · GitHub · GitHub](https://github.com/lloppy/My-Asnova)
 
-Список этих enum классов :
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearSpecials.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearType.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/perks/Perk.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/PlayerCharacterClass.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/modes/GameModes.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/rules/charactercreation/Race.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/rules/magic/ActionRegulation.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/rules/magic/QuantifierRegulation.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/rules/magic/TimeRegulation.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/userdecisions/UserDecision.java
-
-https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/Direction.java
-
-Пояснение: 
-- enum в джаве - единственный экземпляр
-- финальный и статический (enum = static final)
-- есть геттер - можно обратиться через точку (.), чтобы получить значение
--  конструктор Enum всегда приватный (private)
-
-
-<br>
-
-Почему я **переписала** именно этот класс (GearEffects https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/code/fantasygame/models/gear/GearEffects.java) как Singleton (не хранит состояние):
-- у класса GearEffects был приватный конструктор
-- имел статические методы
-Я добавита инстанс и геттер для получения значение инстанса.
-
-
+1. UserManager реализован как синглтон, тк:
+	- У нас один юзер, поэтому каждый раз мне нужно ссылаться на одно и того же юзера (объекта)
+	- UserManager можно легко получить из любого места приложения
+	
+2. Segments реализован как синглтон, тк:
+	-  Мне нужен всего один экземпляр класса
+	- Удобно обращаться к константам по их названиям, удобно получать сразу все константы методом в Segments
+	- Segments можно легко получить из любого места приложения
+	- Я еще летом переписывала этот кусок кода, потому что изначально у меня всё хранилось в строках, которые дублировались. Сейчас дублирования переменных нет
+	
+3. Классы DataModule и NetworkModule. В классах используется аннотация @Singleton в Dagger Hilt тк:
+	- Hilt по умолчанию при каждом обращении будет создавать новые экземпляры, а нам нужен только один экземпляр. С аннотацией @Singleton будет создаваться один экземпляр (например в DataModule мы с помощью Retrofit создаем единственный экземпляр GroupsApi, к которому потом каждый раз будет обращаться Апи для групп во Вконтакте)
