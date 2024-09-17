@@ -15,7 +15,7 @@
               "state": {
                 "file": "task.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           },
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tasks/Singleton. Упражнение 2. Работа из класса.md",
+                "file": "tasks/lessons/singleton.md",
                 "mode": "source",
                 "source": false
               }
@@ -198,7 +198,7 @@
   },
   "active": "a9249a7e9ad60df3",
   "lastOpenFiles": [
-    "tasks/Singleton. Упражнение 2. Работа из класса.md",
+    "tasks/lessons/singleton.md",
     "task.md",
     "tasks/lessons/singleton.pdf",
     "README.md",

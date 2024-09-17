@@ -2,7 +2,7 @@
 
 ## **Задание 2. Singleton** 
 
-[Page not found · GitHub · GitHub](https://github.com/lloppy/My-Asnova)
+https://github.com/lloppy/My-Asnova
 
 1. UserManager реализован как синглтон, тк:
 	- У нас один юзер, поэтому каждый раз мне нужно ссылаться на одно и того же юзера (объекта)
@@ -16,3 +16,5 @@
 	
 3. Классы DataModule и NetworkModule. В классах используется аннотация @Singleton в Dagger Hilt тк:
 	- Hilt по умолчанию при каждом обращении будет создавать новые экземпляры, а нам нужен только один экземпляр. С аннотацией @Singleton будет создаваться один экземпляр (например в DataModule мы с помощью Retrofit создаем единственный экземпляр GroupsApi, к которому потом каждый раз будет обращаться Апи для групп во Вконтакте)
+
+Протупила с работой в классе, пусть будет тут https://github.com/lloppy/patterns_5sem_urfu/tree/main/tasks/lessons/singleton.md
