@@ -75,6 +75,11 @@
 
 Я переделала свой прошлый код, теперь создание упрощено: есть класс Schedule, к которому мы обращаемся через точку и сразу видим, какие экземпляры мы можем создать - Schedule.createPrivateSchedule() или Schedule.createSiteSchedule().
 
+Вот так это выглядит:
+- сайт:  [gcKczrEZflA.jpg](https://sun9-58.userapi.com/impg/s94rnDHbnoEU4X-FvgiZMLXCpN-p0CxKdJVRCw/gcKczrEZflA.jpg?size=997x2160&quality=96&sign=aef03a06f62a582167d6da79d90081c1&type=album)
+- main calendar: [w6hTD5RImt4.jpg](https://sun9-16.userapi.com/impg/Mwzfkq43VFNBBLJBKxbMhHa3si7fyuppNLBfTQ/w6hTD5RImt4.jpg?size=997x2160&quality=96&sign=34dd928213b6122deec47561acada29b&type=album)
+
+
 Также со Static factory method удобно будет дальше делать приложение, тк у меня планируется еще один вид расписания - из Firebase, который потом также добавлю в класс Schedule и сделаю под него метод Schedule.createFirebaseSchedule()
 
 
