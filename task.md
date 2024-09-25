@@ -1,6 +1,14 @@
+## Оглавление 
+- [Задание 1](#задание-1) 
+- [Задание 2. Singleton](#задание-2-singleton) 
+- [Задание 3. Prototype](#задание-3-prototype) 
+- [Задание 4. Static factory method](#задание-4-static-factory-method)
+
+<br>
+
 ## **Задание 1**
 
-[Page not found · GitHub · GitHub](https://github.com/lloppy/My-Asnova)
+[Проект Asnova here](https://github.com/lloppy/My-Asnova)
 <br>
 ## **Задание 2. Singleton** 
 
@@ -67,7 +75,7 @@
 
 <br>
 
-## **Задание 4. Static factory method
+## **Задание 4. Static factory method** 
 
 ```java
 // Паттерн Static factory method
