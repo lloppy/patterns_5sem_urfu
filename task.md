@@ -84,7 +84,7 @@ Prototype я реализовала для роли Админа, который
 
 У нас есть колонка со всеми коряво спарсенными item\`ами групп (у заказчика просто нет шаблона по которому он составляет внутреннее расписание, поэтому *коряво*), которые нужно будет редактировать Админу вручную. По нажатию на item можно его дублировать/редактировать. После сохранения, дкблированный и/или измененный item добавляется в общий лист. 
 
-[Site Unreachable](https://drive.google.com/file/d/15a0De5vueUIzXMAtgxLqwAo6rvLtTvgC/view?usp=drive_link)
+[See video of duplicating](https://drive.google.com/file/d/15a0De5vueUIzXMAtgxLqwAo6rvLtTvgC/view?usp=drive_link)
 
 <br>
 
