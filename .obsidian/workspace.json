@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b66d091699759a37",
+        "id": "f127dfe707fc244f",
         "type": "tabs",
         "children": [
           {
-            "id": "a99042e72edc8159",
+            "id": "1357d48c5c66a11a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -183,10 +183,10 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "a99042e72edc8159",
+  "active": "1357d48c5c66a11a",
   "lastOpenFiles": [
-    "tasks/lessons/singleton.md",
     "task.md",
+    "tasks/lessons/singleton.md",
     "tasks/lessons/singleton.pdf",
     "README.md",
     "backup/me/буквы/singleton.md",

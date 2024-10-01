@@ -3,6 +3,9 @@
 - [Задание 2. Singleton](#задание-2-singleton) 
 - [Задание 3. Prototype](#задание-3-prototype) 
 - [Задание 4. Static factory method](#задание-4-static-factory-method)
+- [Задание 5. Builder](#задание-5-builder)
+- [Задание 6. Factory method](#задание-6-factory-method)
+
 
 <br>
 
@@ -10,6 +13,7 @@
 
 [Проект Asnova here](https://github.com/lloppy/My-Asnova)
 <br>
+
 ## **Задание 2. Singleton** 
 
 ```java
@@ -104,5 +108,27 @@ Prototype я реализовала для роли Админа, который
 
 
 Также со Static factory method удобно будет дальше делать приложение, тк у меня планируется еще один вид расписания - из Firebase, который потом также добавлю в класс Schedule и сделаю под него метод Schedule.createFirebaseSchedule()
+
+<br>
+
+## **Задание 5. Builder** 
+
+```java
+// Паттерн Builder
+```
+
+
+
+<br>
+
+
+## **Задание 6. Factory method** 
+
+```java
+// Паттерн Factory method
+```
+
+
+<br>
 
 
