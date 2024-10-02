@@ -134,7 +134,7 @@ Prototype я реализовала для роли Админа, который
 
 Структура:
 
-![[Pasted image 20241002200645.png]]
+[Tu0vc1XwF50.jpg](https://sun9-5.userapi.com/impg/dcDfZ7ksjxD5hUqR7hG7JhbES-DyIxEXsMjUAQ/Tu0vc1XwF50.jpg?size=2560x1920&quality=96&sign=2fdcf714be6e850988881cc07d3637f6&type=album)
 
 
 Выбрала фабричный метод для Android для обработки пуш-уведомлений с помощью Firebase Cloud Messaging (FCM) по статье [«Фабричный метод» в разработке под Android. Лучший способ обработки пушей / Хабр](https://habr.com/ru/articles/332006/)
@@ -149,9 +149,7 @@ Prototype я реализовала для роли Админа, который
 В зависимости от типа уведомления будут создаются соответствующие классы. 
 Я сдеала реализацию не для всех ролей и не для всех конкретных случаев, но теперь чтобы их добавить не нужно изменять уже имеющийся код
 
-![[Pasted image 20241002201320.png]]
-
-
+[UbqA2q5mH1c.jpg](https://sun9-6.userapi.com/impg/2ARfZJ7Q27Y6L6QRgSrZRnqGZgemRtiUSgIGAg/UbqA2q5mH1c.jpg?size=997x2160&quality=96&sign=b42e01422703b4aef1551bc450f3d119&type=album) 
 <br>
 
 
