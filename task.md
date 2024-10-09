@@ -170,7 +170,37 @@ Prototype я реализовала для роли Админа, который
 // Паттерн Abstract factory
 ```
 
+реализовала Chat Abstract factory для чатов разных ролей.
+```kotlin
+@Provides  
+fun provideChatFactory(): ChatFactory {  
+    // Паттерн Abstract factory  
+    // в зависимости от выбранной роли отображаем чат    return when (UserManager.getRole()) {  
+        Role.ADMIN -> return AdminChatFactory()  
+        Role.STUDENT -> return StudentChatFactory()  
+        Role.WORKER -> return StudentChatFactory()  
+        Role.GUEST -> return GuestChatFactory()  
+        else -> return GuestChatFactory()  
+    }  
+}
+```
+Для загрузки Channels и Messages для каждой роли должна быть своя логика получения из Firebase.
 
+```kotlin
+interface Chat {  
+    fun getChannels(): List<Channel>  
+    fun getMessages(channelId: Long): List<Message>  
+}
+```
+
+Теперь в моей ChatScreenViewModel не нужно явно указывать для какой роли мы создаем фабрику чатов (без if-else). 
+просто вызываем метод *createChat()*
+
+```kotlin
+private val chat: Chat = chatFactory.createChat()
+```
+
+Вот так работает [Видео смены ролей без реализации firebase](https://drive.google.com/file/d/160jvHvDBN4ECUdFFmdRwyXDciUtY5Vul/view?usp=drive_link)
 <br>
 
 ## **Задание 8. Adapter** 
@@ -190,7 +220,20 @@ Prototype я реализовала для роли Админа, который
 
 Теперь CalDavImpl напрямую не связан с клиентом \+ детали реализации скрыты
 
+Использование:
 
+```kotlin
+@Provides  
+@Singleton  
+fun provideScheduleRepository(): ScheduleRepository {  
+    // Паттерн Adapter  
+    val calDavAdapteeImpl = CalDavAdapteeImpl()  
+    val calDavAdapter = CalDavAdapter(calDavAdapteeImpl)  
+  
+    // using the Adapter with Adaptee instance  
+    return ScheduleRepositoryImpl(calDavAdapter)  
+}
+```
 <br>
 
 
