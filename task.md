@@ -200,8 +200,9 @@ interface Chat {
 private val chat: Chat = chatFactory.createChat()
 ```
 
-Вот так работает [Видео смены ролей без реализации firebase](https://drive.google.com/file/d/160jvHvDBN4ECUdFFmdRwyXDciUtY5Vul/view?usp=drive_link)
-<br>
+Вот так работает:
+[Видео смены ролей без реализации firebase](https://drive.google.com/file/d/160jvHvDBN4ECUdFFmdRwyXDciUtY5Vul/view?usp=drive_link)
+<br><br>
 
 ## **Задание 8. Adapter** 
 
