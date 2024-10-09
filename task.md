@@ -5,6 +5,8 @@
 - [Задание 4. Static factory method](#задание-4-static-factory-method)
 - [Задание 5. Builder](#задание-5-builder)
 - [Задание 6. Factory method](#задание-6-factory-method)
+- [Задание 7. Abstract factory](#задание-7-abstract-factory)
+- [Задание 8. Adapter](#задание-8-adapter)
 
 
 <br>
@@ -161,6 +163,34 @@ Prototype я реализовала для роли Админа, который
 > [UbqA2q5mH1c.jpg](https://sun9-6.userapi.com/impg/2ARfZJ7Q27Y6L6QRgSrZRnqGZgemRtiUSgIGAg/UbqA2q5mH1c.jpg?size=997x2160&quality=96&sign=b42e01422703b4aef1551bc450f3d119&type=album) 
 
 <br>
+
+## **Задание 7. Abstract factory** 
+
+```java
+// Паттерн Abstract factory
+```
+
+
+<br>
+
+## **Задание 8. Adapter** 
+
+```java
+// Паттерн Adapter
+```
+
+делала по гайду [Adam Świderski - Adapter Pattern in Kotlin](https://swiderski.tech/kotlin-adapter-pattern/)
+изменила структуру получения внутреннего расписания CalDav на паттерн адаптер
+
+Почему Adapter?
+На данный момент у заказчика все приватное расписание хранится на mail calendar (так исторически сложилось). Mail calendar использует протокол CalDav для передачи расписания по сети. 
+
+Адаптер нужен если в будущем заказчик захочет перейти с Mail Calendar в другой сервис, тогда адаптер нужно будет просто поменять на этот *другой серви*с, и приложению не потребуются значительные изменения в архитектуре.
+Либо если сам Mail поменяет что-то в API или изменит формат данных, то нужно будет только обновить адаптер.
+
+Теперь CalDavImpl напрямую не связан с клиентом \+ детали реализации скрыты
+
+
 
 
   

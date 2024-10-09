@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a24fb2f2823639db",
+        "id": "e64fc3bda5350281",
         "type": "tabs",
         "children": [
           {
-            "id": "9e205a5c71c52568",
+            "id": "be8f5558ec396fe8",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -183,11 +183,11 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "9e205a5c71c52568",
+  "active": "be8f5558ec396fe8",
   "lastOpenFiles": [
+    "task.md",
     "Pasted image 20241002201320.png",
     "Pasted image 20241002200645.png",
-    "task.md",
     "tasks/lessons/singleton.md",
     "tasks/lessons/singleton.pdf",
     "README.md",
