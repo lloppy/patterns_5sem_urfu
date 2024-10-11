@@ -22,6 +22,7 @@
 // Паттерн Singleton
 ```
 
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/7509f16037e45bc3f5d1cfc59e79a83001fc110b) 
 
 1. UserManager реализован как синглтон, тк:
 	- У нас один юзер, поэтому каждый раз мне нужно ссылаться на одно и того же юзера (объекта)
@@ -77,6 +78,7 @@
 ```java
 // Паттерн Prototype
 ```
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/a4404a617fc81b1b6e8462e41d7b58ff7c54f3b2)
 
 Не могла придумать какую уже реализованную фичу можно было бы переделать под Prototype, поэтому делала всё с нуля.
 
@@ -100,6 +102,8 @@ Prototype я реализовала для роли Админа, который
 // Паттерн Static factory method
 ```
 
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/872964fa6d01a9523a1cc6c75051ee041b7ccbeb)
+
 Изначально у меня было два раздельных класса для расписаний: с сайта ([Расписание- ASNOVA учебно-экспертный центр](https://asnova.pro/raspisanie)) и приватное (парсится из mail calendar). Чтобы создать экземпляр класса нужно было вспоминать названия этих классов, я постоянно путалась какое слово идет первым. 
 
 Я переделала свой прошлый код, теперь создание упрощено: есть класс Schedule, к которому мы обращаемся через точку и сразу видим, какие экземпляры мы можем создать - Schedule.createPrivateSchedule() или Schedule.createSiteSchedule().
@@ -118,6 +122,8 @@ Prototype я реализовала для роли Админа, который
 ```java
 // Паттерн Builder
 ```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/0d745bdb8c153aff62db4c517df595da9b794fb5) 
 
 Билдер уже был реализован в моем приложении, потому что это ***эталон*** создания сложных объектов в андроиде со множеством параметров.
 
@@ -139,6 +145,8 @@ Prototype я реализовала для роли Админа, который
 ```java
 // Паттерн Factory method
 ```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/ba9f3b6defc7af90892d4019ba6e2aea0b580d2e)
 
 Структура:
 
@@ -169,6 +177,8 @@ Prototype я реализовала для роли Админа, который
 ```java
 // Паттерн Abstract factory
 ```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/92ac0d755228548d11e8e7ea2c4b228cb326cff3)
 
 реализовала `Chat` Abstract factory для чатов разных ролей.
 ```kotlin
@@ -212,6 +222,8 @@ private val chat: Chat = chatFactory.createChat()
 ```java
 // Паттерн Adapter
 ```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/da31ee3b47486224659671bb1dd15b0d7115e1b4)
 
 делала по гайду [Adam Świderski - Adapter Pattern in Kotlin](https://swiderski.tech/kotlin-adapter-pattern/)
 изменила структуру получения внутреннего расписания CalDav на паттерн адаптер

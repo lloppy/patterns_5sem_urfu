@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e64fc3bda5350281",
+        "id": "e81264f72d767090",
         "type": "tabs",
         "children": [
           {
-            "id": "be8f5558ec396fe8",
+            "id": "addbd5a8aaeae2b9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -183,7 +183,7 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "be8f5558ec396fe8",
+  "active": "addbd5a8aaeae2b9",
   "lastOpenFiles": [
     "task.md",
     "Pasted image 20241002201320.png",
