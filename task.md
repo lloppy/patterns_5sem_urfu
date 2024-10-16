@@ -7,6 +7,7 @@
 - [Задание 6. Factory method](#задание-6-factory-method)
 - [Задание 7. Abstract factory](#задание-7-abstract-factory)
 - [Задание 8. Adapter](#задание-8-adapter)
+- [Задание 9. Bridge](#задание-9-bridge)
 
 
 <br>
@@ -250,8 +251,71 @@ fun provideScheduleRepository(): ScheduleRepository {
     return ScheduleRepositoryImpl(calDavAdapter)  
 }
 ```
+
 <br>
 
+## **Задание 9. Bridge** 
 
+```java
+// Паттерн Bridge
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/7f2b4f0799084b1ddffb3525f6243a78ab7fc0a3)
+
+в моем приложении есть экран настроек
+настрийки в приложении разные: темная/светнлая тема, язык, включены/выкл уведомления, вход/гость.
+
+эти настройки контролируются из Storage, в котором есть два метода:
+```kotlin
+fun save(data: T) 
+fun get(): T
+```
+
+
+1. **Абстракция**:  общий интерфейс `Storage<T>`
+описывает общие операции для всех типов хранилищ
+
+2. **Реализация**: 
+Это интерфейсы: `NotificationsSettingStorage`, `LanguageSettingStorage`, `IsAuthedUserStorage` и тд.
+Реализация наследуется от общего интерфеса Storage, предоставляет конкретную логику работы с данными (внутри определяется с какими именно Options мы работаем, например:
+```kotlin
+// Паттерн Bridge  
+interface ThemeSettingStorage : Storage<ThemeOption>{  
+    override fun save(theme: ThemeOption)  
+    override fun get() : ThemeOption  
+}
+```
+)
+
+
+3. **Связующее звенья**: 
+`NotificationsSettingStorageImpl`, `LanguageSettingStorageImpl`, и тд.
+
+Это связующие звена между абстракцией (интерфейсами) и конкретной реализацией (например, использование SharedPreferences)
+
+```kotlin
+// Паттерн Bridge  
+class NotificationsSettingStorageImpl(context: Context) : NotificationsSettingStorage {  
+    private val sharedPreferences =  
+        context.getSharedPreferences(SHARED_PREFS_NOTIFICATIONS_SETTING, Context.MODE_PRIVATE)  
   
+    override fun save(notifications: NotificationsOption) {  
+        sharedPreferences.edit().putString(KEY_NOTIFICATIONS_SETTING, notifications.value).apply()  
+    }  
+  
+    override fun get(): NotificationsOption {  
+        return NotificationsOption(  
+            sharedPreferences.getString(KEY_NOTIFICATIONS_SETTING, "ALL") ?: "ALL"  
+        )  
+    }  
+}
+```
+
+Почему использую:
+- есть несколько альтернативных реализаций и необходимо независимо менять интерфейс и реализацию 
+- число классов в иерархии параметров настроек может в будущем быстро расти 
+  
+  
+  <br>
+
  [наверх](#Оглавление) 
