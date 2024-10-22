@@ -8,6 +8,8 @@
 - [Задание 7. Abstract factory](#задание-7-abstract-factory)
 - [Задание 8. Adapter](#задание-8-adapter)
 - [Задание 9. Bridge](#задание-9-bridge)
+- [Задание 10. Composite](#задание-10-composite)
+- [Задание 11. Decorator](#задание-11-decorator)
 
 
 <br>
@@ -315,7 +317,50 @@ class NotificationsSettingStorageImpl(context: Context) : NotificationsSettingSt
 - есть несколько альтернативных реализаций и необходимо независимо менять интерфейс и реализацию 
 - число классов в иерархии параметров настроек может в будущем быстро расти 
   
+<br>
+
+## **Задание 10. Composite** 
+
+```java
+// Паттерн Composite
+```
+
+[ссылка на коммит]()
   
   <br>
+
+## **Задание 11. Decorator 
+
+```java
+// Паттерн Decorator
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/870f5de6de1aed90fff9bb56530e6d916c7ebeb2)
+
+у меня был UI элемент `SkeletonScreen`, который нужен был для обработки UI\`я экрана:
+```kotlin
+@Composable  
+fun SkeletonScreen(  
+    isLoading: Boolean,  
+    skeleton: @Composable () -> Unit,  
+    content: @Composable () -> Unit  
+) {  
+    if (isLoading)  
+        skeleton()  
+    else  
+        content()  
+}
+```
+
+этот компонент я использовала для экранов FeedScreen, SelectClassScreen и ScheduleScreen.
+
+Призанаки:
+- это конкретный декоратор для экранов
+- дополнительное поведение - отображение состояния загрузки (loading state)
+-  содержит (обертывает) экземпляр базового класса - обертывает базовый экран
+
+[Decorator Pattern in Jetpack Compose Android Apps](https://www.blog.finotes.com/post/decorator-pattern-in-jetpack-compose-android-apps)
+<br>
+
 
  [наверх](#Оглавление) 
