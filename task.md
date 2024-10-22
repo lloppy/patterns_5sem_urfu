@@ -346,7 +346,7 @@ exporter.loadDatabase()
 - бд можно обойти рекурсивно (рекурсивный обход дерева)
 <br>
 
-## **Задание 11. Decorator 
+## **Задание 11. Decorator**
 
 ```java
 // Паттерн Decorator
@@ -376,7 +376,9 @@ fun SkeletonScreen(
 - дополнительное поведение - отображение состояния загрузки (loading state)
 -  содержит (обертывает) экземпляр базового класса - обертывает базовый экран
 
-[Decorator Pattern in Jetpack Compose Android Apps](https://www.blog.finotes.com/post/decorator-pattern-in-jetpack-compose-android-apps)
+[Decorator Pattern in Jetpack Compose Android Apps](https://www.blog.finotes.com/post/decorator-pattern-in-jetpack-compose-android-apps) - использовала как подсказку по применению
+
+
 <br>
 
 
