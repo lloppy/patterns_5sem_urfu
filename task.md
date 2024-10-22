@@ -325,9 +325,26 @@ class NotificationsSettingStorageImpl(context: Context) : NotificationsSettingSt
 // Паттерн Composite
 ```
 
-[ссылка на коммит]()
-  
-  <br>
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/d5959b41e9b2b4111b170923b6e2228356b12cbd)
+
+
+я использую realtime firebase database.
+мой json импортированный из файербейса:
+
+
+**сделала испорт всех нод.**
+
+использование:
+```kotlin
+val exporter = DatabaseExporter()  
+exporter.loadDatabase()
+```
+
+Почему:
+- у меня была бд
+- у бд есть ноды, ключ-значение
+- бд можно обойти рекурсивно (рекурсивный обход дерева)
+<br>
 
 ## **Задание 11. Decorator 
 

@@ -200,11 +200,13 @@
       "templates:Insert template": true,
       "command-palette:Open command palette": true,
       "templater-obsidian:Templater": true,
-      "dbfolder:Create a new database table": true
+      "dbfolder:Create a new database table": true,
+      "periodic-notes:Open today": false
     }
   },
-  "active": "e6788d1509098f04",
+  "active": "0648334cbc86e6d7",
   "lastOpenFiles": [
+    "tasks/code/asnova-f7891-default-rtdb-export.json",
     "task.md",
     "Pasted image 20241002201320.png",
     "Pasted image 20241002200645.png",
