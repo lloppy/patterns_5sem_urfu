@@ -330,7 +330,7 @@ class NotificationsSettingStorageImpl(context: Context) : NotificationsSettingSt
 
 я использую realtime firebase database.
 мой json импортированный из файербейса:
-
+[patterns\_5sem\_urfu/tasks/code/asnova-f7891-default-rtdb-export.json at main · lloppy/patterns\_5sem\_urfu · GitHub](https://github.com/lloppy/patterns_5sem_urfu/blob/main/tasks/code/asnova-f7891-default-rtdb-export.json)
 
 **сделала испорт всех нод.**
 
