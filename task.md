@@ -403,7 +403,7 @@ fun SkeletonScreen(
 
 <br>
 
-## **Задание 13. Flyweight
+## **Задание 13. Flyweight** 
 
 ```java
 // Паттерн Flyweight
@@ -425,5 +425,8 @@ fun SkeletonScreen(
 
 
 <br>
+
+<br>
+
 
  [наверх](#Оглавление) 
