@@ -20,6 +20,18 @@
               "icon": "lucide-file",
               "title": "task"
             }
+          },
+          {
+            "id": "3cf23149db033f3f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "tasks/lessons/singleton.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "singleton"
+            }
           }
         ]
       }
@@ -206,12 +218,12 @@
   },
   "active": "e6788d1509098f04",
   "lastOpenFiles": [
-    "tasks/code/asnova-f7891-default-rtdb-export.json",
+    "tasks/lessons/singleton.pdf",
+    "tasks/lessons/singleton.md",
     "task.md",
+    "tasks/code/asnova-f7891-default-rtdb-export.json",
     "Pasted image 20241002201320.png",
     "Pasted image 20241002200645.png",
-    "tasks/lessons/singleton.md",
-    "tasks/lessons/singleton.pdf",
     "README.md",
     "backup/me/буквы/singleton.md",
     "backup/me/буквы/статистический класс или синглтон.md",
@@ -251,7 +263,6 @@
     "backup/periodic/templates",
     "backup/templates/bin",
     "backup/home/💔 orphan",
-    "backup/people",
-    "Old Homepage Source Code/sharetype.css"
+    "backup/people"
   ]
 }

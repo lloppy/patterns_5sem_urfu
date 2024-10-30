@@ -10,6 +10,7 @@
 - [Задание 9. Bridge](#задание-9-bridge)
 - [Задание 10. Composite](#задание-10-composite)
 - [Задание 11. Decorator](#задание-11-decorator)
+- [Задание 12. Facade](#задание-12-facade)
 
 
 <br>
@@ -378,6 +379,28 @@ fun SkeletonScreen(
 
 [Decorator Pattern in Jetpack Compose Android Apps](https://www.blog.finotes.com/post/decorator-pattern-in-jetpack-compose-android-apps) - использовала как подсказку по применению
 
+
+<br>
+
+## **Задание 12. Facade**
+
+```java
+// Паттерн Facade
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/8b60d014afec3cdca9e68b27ebbe05fa18546e95)
+
+
+Структура:
+
+> [!картинка-схема]
+> [Tu0vc1XwF50.jpg](https://sun9-4.userapi.com/impg/F7Dz2tspbbxFOxeUH0YLhwS2ddz-qJmu7Sr5kA/lj_S3XbKEf0.jpg?size=720x1280&quality=95&sign=904727a26990d872096ae7eaf4376317&type=album)
+
+
+Почему:
+
+У меня есть репозиторий новостей, где много методов. Они используются внутри репозитория. 
+Поэтому я "вытащила наружу" только то, что используется извне (вытащила в NewsFacade) - и тем самым отделила внешние методы от внутренних в репозитории новостей. фасад скрыл излишние детали реализации, предоставляя доступ извне только к необходимым методам.
 
 <br>
 
