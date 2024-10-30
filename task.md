@@ -409,7 +409,7 @@ fun SkeletonScreen(
 // Паттерн Flyweight
 ```
 
-[ссылки нет - внутри класса джавовского Integer в классе IntegerCache]
+[ссылка на Integer - используется внутри класса джавовского Integer в классе IntegerCache](https://github.com/openjdk/jdk13/blob/master/src/java.base/share/classes/java/lang/Integer.java)
 
 Паттерн Flyweight используется внутри класса джавовского Integer.
 он кэширует значения Integer\`ов  от -128 до 127 через IntegerCache. В этом диапазоне объекты повторно используются, что экономит память и снижает количество создаваемых экземпляров
