@@ -426,6 +426,7 @@ fun SkeletonScreen(
 > [Tu0vc1XwF50.jpg](https://sun9-72.userapi.com/impg/3gMNSsdSXQikMc1uqF2SrsTZRVABuavl6_eUXw/V3BrWOdGrho.jpg?size=1600x1332&quality=95&sign=5e43b08cbb67e0ecff119ced454fa62d&type=album)
 
 <br>
+
 ## **Задание 14. Proxy** 
 
 ```java
@@ -477,8 +478,8 @@ class LoggingScheduleRepository(private val repository: ScheduleRepository) : Sc
 - разделение логирования (LoggingScheduleRepository, LoggingUserRepository) и бизес-логики (*ScheduleRepositoryImpl*, *UserRepositoryImpl*)
 - в логах появился свой Тэг, и функция `logResourceResult` для отображения результата `resource`
 - код стал чище и понятнее, всем стало приятно :)
-
 <br>
+
 ## **Задание 15. Сhain of responsibility** 
 
 ```java
@@ -486,7 +487,8 @@ class LoggingScheduleRepository(private val repository: ScheduleRepository) : Sc
 // комментариев в коде нет, потому что это всё (что находится в папке) один паттерн
 ```
 
- код: [java-course-tinkoff/src/main/java/edu/hw5/task3 at 80720c130395f810c70f902013debcb01a84f166 · lloppy/java-course-tinkoff · GitHub](https://github.com/lloppy/java-course-tinkoff/tree/80720c130395f810c70f902013debcb01a84f166/src/main/java/edu/hw5/task3)это старый код (год назад писался) из другого репозитория
+ код: [java-course-tinkoff/src/main/java/edu/hw5/task3 at 80720c130395f810c70f902013debcb01a84f166 · lloppy/java-course-tinkoff · GitHub](https://github.com/lloppy/java-course-tinkoff/tree/80720c130395f810c70f902013debcb01a84f166/src/main/java/edu/hw5/task3)
+ это старый код (год назад писался) из другого репозитория
 
 [ссылка на коммит](https://github.com/lloppy/java-course-tinkoff/commits/80720c130395f810c70f902013debcb01a84f166/src/main/java/edu/hw5/task3)
 
@@ -511,9 +513,9 @@ public abstract class Parser {
 - **MixParser** - обрабатывает строки с указанием количества и единиц времени (например, "5 days ago").
 - **DateParser** -  обрабатывает даты в различных форматах.
 
-
-- [ ] если парсер может обработать строку, он возвращает результат. 
-- [ ] если нет, он передает запрос следующему парсеру через вызов метода `getNextParser().getParseDate(string)`
+---
+- если парсер может обработать строку, он возвращает результат. 
+- если нет, он передает запрос следующему парсеру через вызов метода `getNextParser().getParseDate(string)`
 
 ```java
 @Override 
