@@ -12,6 +12,9 @@
 - [Задание 11. Decorator](#задание-11-decorator)
 - [Задание 12. Facade](#задание-12-facade)
 - [Задание 13. Flyweight](#задание-13-flyweight)
+- [Задание 14. Proxy](#задание-14-proxy)
+- [Задание 15. Сhain of responsibility](#задание-15-chain-of-responsibility)
+
 <br>
 
 ## **Задание 1**
@@ -422,9 +425,141 @@ fun SkeletonScreen(
 > [!картинка]
 > [Tu0vc1XwF50.jpg](https://sun9-72.userapi.com/impg/3gMNSsdSXQikMc1uqF2SrsTZRVABuavl6_eUXw/V3BrWOdGrho.jpg?size=1600x1332&quality=95&sign=5e43b08cbb67e0ecff119ced454fa62d&type=album)
 
+<br>
+## **Задание 14. Proxy** 
 
+```java
+// Паттерн Proxy
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/c64d9d88b45a473b5dd80b462ce377a485911b97)
+
+Сделала для двух репозиториев прокси кэширования
+
+1. у меня был **UserRepository** и реализация *UserRepositoryImpl*. До рефакторинга и добавления паттерна, в *UserRepositoryImpl* методах добавляла логи - смотрела что приходит в функцию и как она обрабатывает. Поэтому решила отделить логи от самого функционального кода - добавила `class LoggingUserRepository(private val repository: **UserRepository**) : **UserRepository**` , где создала общий тег `private val tag = "LoggingUserRepository"`. 
+Очень удобно и сразу очистился код в UserRepositoryImpl от лишних логов.
+
+Кстати, поменять на прокcи тоже было легко:
+```java
+@Provides  
+@Singleton  
+fun provideUserRepository(  
+    @ApplicationContext context: Context,  
+    oneTapClient: SignInClient  
+): UserRepository {  
+    // Паттерн Proxy  
+    val originalRepository = UserRepositoryImpl(context, oneTapClient) 
+    return LoggingUserRepository(originalRepository)  
+}
+```
+
+и поменяла одну строчку в DI:
+```kotlin
+@Provides  
+@Singleton  
+fun provideScheduleRepository(): ScheduleRepository {    
+    // Паттерн Proxy  
+    val originalRepository = ScheduleRepositoryImpl(calDavAdapter)  
+    return LoggingScheduleRepository(originalRepository)  
+}
+```
+
+2. то же самое сделала и с **ScheduleRepository** и его имплементацией *ScheduleRepositoryImpl*. Логирование теперь в LoggingScheduleRepository:
+```java
+// Паттерн Proxy  
+class LoggingScheduleRepository(private val repository: ScheduleRepository) : ScheduleRepository {  
+    private val tag = "LoggingScheduleRepository"
+```
+После этого почистила *ScheduleRepositoryImpl* от лишнего кода. 
+
+
+После рефакторинга я имею:
+- разделение логирования (LoggingScheduleRepository, LoggingUserRepository) и бизес-логики (*ScheduleRepositoryImpl*, *UserRepositoryImpl*)
+- в логах появился свой Тэг, и функция `logResourceResult` для отображения результата `resource`
+- код стал чище и понятнее, всем стало приятно :)
 
 <br>
+## **Задание 15. Сhain of responsibility** 
+
+```java
+// Паттерн Сhain of responsibility
+// комментариев в коде нет, потому что это всё (что находится в папке) один паттерн
+```
+
+ код: [java-course-tinkoff/src/main/java/edu/hw5/task3 at 80720c130395f810c70f902013debcb01a84f166 · lloppy/java-course-tinkoff · GitHub](https://github.com/lloppy/java-course-tinkoff/tree/80720c130395f810c70f902013debcb01a84f166/src/main/java/edu/hw5/task3)это старый код (год назад писался) из другого репозитория
+
+[ссылка на коммит](https://github.com/lloppy/java-course-tinkoff/commits/80720c130395f810c70f902013debcb01a84f166/src/main/java/edu/hw5/task3)
+
+
+1. **Parser** - абстрактный класс, который определяет метод `getParseDate` и хранит ссылку на следующий парсер в цепочке
+
+```java
+public abstract class Parser {
+    public Parser nextParser;
+
+    public Parser(Parser nextParser) {
+        this.nextParser = nextParser;
+    }
+
+    public abstract Optional<LocalDate> getParseDate(String string);
+}
+```
+
+2. **Конкретные парсеры** (`StringParser`, `MixParser`, `DateParser`)
+
+- **StringParser** - обрабатывает строки с предопределенными значениями ("tomorrow", "today", "yesterday").
+- **MixParser** - обрабатывает строки с указанием количества и единиц времени (например, "5 days ago").
+- **DateParser** -  обрабатывает даты в различных форматах.
+
+
+- [ ] если парсер может обработать строку, он возвращает результат. 
+- [ ] если нет, он передает запрос следующему парсеру через вызов метода `getNextParser().getParseDate(string)`
+
+```java
+@Override 
+public Optional<LocalDate> getParseDate(final String string) {
+    if (string.equalsIgnoreCase("tomorrow")) {
+        return Optional.of(LocalDate.now().plusDays(1));
+    } else if (string.equalsIgnoreCase("today")) {
+        return Optional.of(LocalDate.now());
+    } else if (string.equalsIgnoreCase("yesterday")) {
+        return Optional.of(LocalDate.now().minusDays(1));
+    } else {
+        return getNextParser().getParseDate(string); // передает следующему парсеру
+    }
+}
+```
+
+3. **Построение цепочки**
+метод buildChain() в классе `Task3` делает цепочку парсеров
+
+```java
+private void buildChain() {
+    DateParser dateParser = new DateParser(null);
+    MixParser mixParser = new MixParser(dateParser);
+    StringParser stringParser = new StringParser(mixParser);
+
+    handlers = List.of(stringParser, mixParser, dateParser);
+}
+```
+
+и применяется в методе parseDate() в классе `Task3`
+
+```java
+Optional<LocalDate> parseDate(String string) {
+    return handlers.stream()
+        .map(parser -> parser.getParseDate(string))
+        .filter(Optional::isPresent)
+        .map(Optional::get)
+        .findFirst();
+}
+```
+
+
+Почему CoR:
+- можно добавлять новые парсеры или изменять порядок их обработки, при этом не изменяя текущий код
+- в этом коде форматы дат обрабатываются последовательно, через цепочку парсеров. если значение подошло - оно будет возвращаться, а если ни один парсер не подошел - значит нужно дописать парсер на непокрытый случай
+- это значит что система *расширяемая* 
 
 <br>
 
