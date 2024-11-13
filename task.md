@@ -574,6 +574,8 @@ Optional<LocalDate> parseDate(String string) {
 
 [ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/d6a968f8cda0833b7fdab0affca59a47bb3935b0)
 
+[![Image](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241113203434.png)](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241113203434.png)
+
 
 ![[Pasted image 20241113203434.png]]
 
