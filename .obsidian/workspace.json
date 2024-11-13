@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "task.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -233,6 +233,9 @@
   },
   "active": "989e7160199fe3b5",
   "lastOpenFiles": [
+    "backup/files/Pasted image 20241113203434.png",
+    "backup/files",
+    "backup",
     "().md",
     "task.md",
     "tasks/lessons/singleton.pdf",
@@ -262,7 +265,6 @@
     "backup/templates/00 movie template.md",
     "backup/places/Carnegie Mellon School of Drama.md",
     "backup/me/видео/Hazbin Hotel.md",
-    "backup/me/видео/Holiday Inn.md",
     "backup/places",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf",
     "backup/files/Matematika_v_mashinnom_obuchenii.pdf.crdownload",
@@ -277,8 +279,6 @@
     "backup/files/thumb-1920-1168791.jpg",
     "backup/files/photo_2024-09-10_01-49-44.jpg",
     "backup/periodic/templates",
-    "backup/templates/bin",
-    "backup/home/💔 orphan",
-    "backup/people"
+    "backup/templates/bin"
   ]
 }

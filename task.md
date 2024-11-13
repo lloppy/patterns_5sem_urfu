@@ -14,6 +14,7 @@
 - [Задание 13. Flyweight](#задание-13-flyweight)
 - [Задание 14. Proxy](#задание-14-proxy)
 - [Задание 15. Сhain of responsibility](#задание-15-chain-of-responsibility)
+- [Задание 16. Сommand](#задание-16-command)
 
 <br>
 
@@ -562,6 +563,51 @@ Optional<LocalDate> parseDate(String string) {
 - можно добавлять новые парсеры или изменять порядок их обработки, при этом не изменяя текущий код
 - в этом коде форматы дат обрабатываются последовательно, через цепочку парсеров. если значение подошло - оно будет возвращаться, а если ни один парсер не подошел - значит нужно дописать парсер на непокрытый случай
 - это значит что система *расширяемая* 
+
+<br>
+
+## **Задание 16. Command** 
+
+```java
+// Паттерн Command
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/d6a968f8cda0833b7fdab0affca59a47bb3935b0)
+
+
+![[Pasted image 20241113203434.png]]
+
+зачем нужен был рефакторинг на Команду:
+
+- вынесла код, который относится к бд в отдельную вьюмодель:
+```java
+class ClassesViewModel @Inject constructor( 
+	...
+) : ViewModel(), CommandReceiver {}
+
+```
+Вьюмодель имплеметирует методы от CommandReceiver со всеми комадами.
+В итоге мы изолировали код команд. 
+
+- при добавлении новых команд в CommandReceiver его легко будет использовать через обработчик:
+
+```java
+val commandProcessor = { command: Command ->  
+    classesViewModel.processCommand(command)  
+}
+
+```
+
+- в интерфейсе Команда также потом можно реализовать отмену действия (реализацию отметны я не делала в коде):
+```java
+interface Command {  
+    fun execute(receiver: CommandReceiver)  
+    fun undo()  
+}
+
+```
+
+В итоге разделила код из вьюмодели в `ClassesViewModel`, где описаны команды
 
 <br>
 
