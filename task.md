@@ -577,7 +577,6 @@ Optional<LocalDate> parseDate(String string) {
 [![Image](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241113203434.png)](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241113203434.png)
 
 
-![[Pasted image 20241113203434.png]]
 
 зачем нужен был рефакторинг на Команду:
 
