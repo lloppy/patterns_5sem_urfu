@@ -633,14 +633,14 @@ interface Command {
 
 
 
+Новый проект: [Page not found · GitHub · GitHub](https://github.com/lloppy/hapson)
+
+в Агрегаторе ClassIteratorImpl реализован внутренний анонимный класс Итератора. агрегатор ClassIteratorImpl управляет коллекцией классов организаций (которые будут пользоваться моим приложением) - ClassModel.
+
+итератор обходит коллекцию классов ClassModel не раскрывая детали реализации агрегатора
 
 
-В Агрегаторе ClassIteratorImpl реализован внутренний анонимный класс Итератора. Агрегатор ClassIteratorImpl управляет коллекцией классов организаций (которые будут пользоваться моим приложением) - ClassModel.
-
-Итератор обходит коллекцию классов ClassModel не раскрывая детали реализации агрегатора
-
-
-Также в ClassIteratorImpl я сделала кастомное добавление класса `addClass` - если лимит по кол-ву классов в текущей подписке будет превышен - то нужно будет просить купить подписку (и ограничить добавления класса ClassModel)
+также в ClassIteratorImpl я сделала кастомное добавление класса `addClass` - если лимит по кол-ву классов в текущей подписке будет превышен - то нужно будет просить купить подписку (и ограничить добавления класса ClassModel)
 
 ```java
 class ClassIteratorImpl(private val capacity: Int) : Iterable<ClassModel> {  
@@ -656,8 +656,7 @@ class ClassIteratorImpl(private val capacity: Int) : Iterable<ClassModel> {
     }
 ```
 
-Используется в стейте экрана: 
-
+используется в стейте экрана: 
 
 ```java
 data class ClassesScreenState(  
@@ -669,20 +668,61 @@ data class ClassesScreenState(
 }
 
 ```
+
 <br>
-
-
 ## **Задание 19. Mediator** 
 
 ```java
 // Паттерн Mediator
 ```
 
-[ссылка на коммит]()
+[ссылка на коммит](https://github.com/lloppy/hapson/commit/af27ce56abcde132d6333f365e61a6e2519e595c)
 
+Новый проект: [Fetching Title#h79w](https://github.com/lloppy/hapson)
+пока в новом проекте пустовато.
+
+добавила для ввода текста, две кнопки и логгирование для них через медиатор.
+
+вся логика обработки событий и состояния компонентов - в классе `DialogMediator`. когда текст будет изменяется в TextBox, медиатор обработает изменение и обновит состояние.
+
+Button и TextBox не зависят друг от друга напрямую = хорошо = снижается связанность между компонентами
+
+---
+
+элеметы (текстовое поле и кнопка) описала тут:
+
+```java
+abstract class UiElement(val mediator: Mediator)  
+  
+class Button(mediator: Mediator) : UiElement(mediator) {  
+    fun click() {  
+        mediator.notify(this, "click")  
+    }  
+}  
+  
+class TextBox(mediator: Mediator) : UiElement(mediator) {  
+    var text: String by Delegates.observable("") { property, oldValue, newValue ->  
+        mediator.notify(this, "text_changed")  
+    }  
+}
+```
+
+
+гоги после взаимодействия с экраном (ввод текста и нажатия на кнопки): 
+
+```java
+Notify called with sender: TextBox, event: text_changed
+2024-11-20 22:30:59.712 14700-14700 TextDialog              com.lloppy.hapson                    E  Input text changed to: всем привет
+2024-11-20 22:31:02.618 14700-14700 TextDialog              com.lloppy.hapson                    E  Notify called with sender: Button, event: click
+2024-11-20 22:31:02.619 14700-14700 TextDialog              com.lloppy.hapson                    E  Form submitted with input: всем привет
+2024-11-20 22:31:03.444 14700-14700 TextDialog              com.lloppy.hapson                    E  Notify called with sender: Button, event: click
+2024-11-20 22:31:03.444 14700-14700 TextDialog              com.lloppy.hapson                    E  Dialog dismissed
+```
 
 
 <br>
+
+
 
 
  [наверх](#Оглавление) 
