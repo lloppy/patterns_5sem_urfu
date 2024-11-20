@@ -1,4 +1,6 @@
 # Приложение: [Happy lessons](https://github.com/lloppy/hapson)
+ссылка для приглашения: [присоединиться к приватному репозиторию](https://github.com/lloppy/hapson/invitations)
+
 
 > [!Описание]
 > Приложение для обучающих центров (Алгоритмика, codeMastes, Coding и тп) и репетиторов (самозанятых)
