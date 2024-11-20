@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -245,8 +245,9 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "0648334cbc86e6d7",
+  "active": "989e7160199fe3b5",
   "lastOpenFiles": [
+    "README.md",
     "task.md",
     "backup/files/Pasted image 20241113203434.png",
     "backup/files",
@@ -257,7 +258,6 @@
     "tasks/code/asnova-f7891-default-rtdb-export.json",
     "Pasted image 20241002201320.png",
     "Pasted image 20241002200645.png",
-    "README.md",
     "backup/me/буквы/singleton.md",
     "backup/me/буквы/статистический класс или синглтон.md",
     "backup/me/буквы/Шаблоны проектирования Банды четырёх (GoF).md",

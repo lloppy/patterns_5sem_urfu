@@ -670,7 +670,9 @@ data class ClassesScreenState(
 ```
 
 <br>
+
 ## **Задание 19. Mediator** 
+
 
 ```java
 // Паттерн Mediator
