@@ -16,8 +16,10 @@
 - [Задание 15. Сhain of responsibility](#задание-15-chain-of-responsibility)
 - [Задание 16. Сommand](#задание-16-command)
 - [Задание 17. Interpreter](#задание-17-interpreter)
+- [Задание 18. Iterator](#задание-18-iterator)
+- [Задание 19. Mediator](#задание-19-mediator)
 
-<br>
+
 
 ## **Задание 1**
 
@@ -618,6 +620,57 @@ interface Command {
 - у меня нет админки, потому что сотрудницы заказчика не смогли бы написать команду (например для получения данных с бд, для них лучше одну кнопку сделать)
 - у меня в коде были Регексп, но под паттерн это не уложить (там просто текст разбивался на поля дата-класса)
 - нет также и возможности для пользователя задать кастомизацию командами
+
+<br>
+
+## **Задание 18. Iterator** 
+
+```java
+// Паттерн Iterator
+```
+
+[ссылка на коммит](https://github.com/lloppy/hapson/commit/c27105e38cd15a91963aa3d4e579c86fab41a5a5)
+
+
+
+
+
+В Агрегаторе ClassIteratorImpl реализован внутренний анонимный класс Итератора. Агрегатор ClassIteratorImpl управляет коллекцией классов организаций (которые будут пользоваться моим приложением) - ClassModel.
+
+Итератор обходит коллекцию классов ClassModel не раскрывая детали реализации агрегатора
+
+
+Также в ClassIteratorImpl я сделала кастомное добавление класса `addClass` - если лимит по кол-ву классов в текущей подписке будет превышен - то нужно будет просить купить подписку (и ограничить добавления класса ClassModel)
+
+```java
+class ClassIteratorImpl(private val capacity: Int) : Iterable<ClassModel> {  
+    private val classes = mutableListOf<ClassModel>()  
+
+    fun addClass(classModel: ClassModel) {  
+        if (classes.size < capacity) {  
+            classes.add(classModel)  
+        } else {  
+            Log.e("iterator", "Limit! Please buy and upgrade your current plan!")  
+            Log.e("iterator", "Превышен лимит классов для организации!")  
+        }  
+    }
+```
+
+
+<br>
+
+
+## **Задание 19. Mediator** 
+
+```java
+// Паттерн Mediator
+```
+
+[ссылка на коммит]()
+
+
+
+<br>
 
 
  [наверх](#Оглавление) 
