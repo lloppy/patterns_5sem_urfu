@@ -656,7 +656,19 @@ class ClassIteratorImpl(private val capacity: Int) : Iterable<ClassModel> {
     }
 ```
 
+Используется в стейте экрана: 
 
+
+```java
+data class ClassesScreenState(  
+    val organizationId: String,  
+    val organization: Organization = Repository.getOrganizationById(organizationId)!!,  
+    val classModels: ClassIteratorImpl = ClassIteratorImpl(capacity = 5)  
+){
+	...
+}
+
+```
 <br>
 
 
