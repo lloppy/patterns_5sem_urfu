@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "task.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task"
+              "title": "README"
             }
           },
           {
@@ -61,7 +61,8 @@
               "title": "singleton"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -244,18 +245,19 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "e6788d1509098f04",
+  "active": "989e7160199fe3b5",
   "lastOpenFiles": [
+    "tasks/lessons/singleton.pdf",
+    "README.md",
+    "backup/files/Pasted image 20241127202903.png",
+    "task.md",
     "backup/files/Pasted image 20241127202536.png",
     "backup/files/Pasted image 20241127202534.png",
     "backup/files/Pasted image 20241127201740.png",
-    "README.md",
-    "task.md",
     "backup/files/Pasted image 20241113203434.png",
     "backup/files",
     "backup",
     "().md",
-    "tasks/lessons/singleton.pdf",
     "tasks/lessons/singleton.md",
     "tasks/code/asnova-f7891-default-rtdb-export.json",
     "Pasted image 20241002201320.png",
@@ -289,8 +291,6 @@
     "backup/files/Pasted image 20240910212722.png",
     "Untitled.canvas",
     "backup/files/ievetrov_ru.pdf",
-    "backup/files/Pasted image 20240910021620.png",
-    "backup/files/Pasted image 20240910021607.png",
     "backup/periodic/templates",
     "backup/templates/bin"
   ]

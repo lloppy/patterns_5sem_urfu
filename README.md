@@ -37,3 +37,6 @@
 
 Старое приложение:
 # Приложение для УЭЦ "Аснова" [https://github.com/lloppy/My-Asnova](https://github.com/lloppy/My-Asnova)
+
+
+![[Pasted image 20241127202903.png]]
