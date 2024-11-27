@@ -39,4 +39,4 @@
 # Приложение для УЭЦ "Аснова" [https://github.com/lloppy/My-Asnova](https://github.com/lloppy/My-Asnova)
 
 
-![[Pasted image 20241127202903.png]]
+![обложка](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241127202903.png)

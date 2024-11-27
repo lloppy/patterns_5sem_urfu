@@ -61,8 +61,7 @@
               "title": "singleton"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -245,12 +244,12 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "989e7160199fe3b5",
+  "active": "e6788d1509098f04",
   "lastOpenFiles": [
+    "task.md",
     "tasks/lessons/singleton.pdf",
     "README.md",
     "backup/files/Pasted image 20241127202903.png",
-    "task.md",
     "backup/files/Pasted image 20241127202536.png",
     "backup/files/Pasted image 20241127202534.png",
     "backup/files/Pasted image 20241127201740.png",

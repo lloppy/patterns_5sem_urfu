@@ -889,7 +889,7 @@ private void considerNotify(ObserverWrapper observer) {
 Подписанная схема:
 ![[Pasted image 20241127202536.png]]
 
-[схема](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241127202536.png)
+![схема](https://github.com/lloppy/patterns_5sem_urfu/blob/main/backup/files/Pasted%20image%2020241127202536.png)
 
 ---
 
