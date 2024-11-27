@@ -19,6 +19,7 @@
 - [Задание 18. Iterator](#задание-18-iterator)
 - [Задание 19. Mediator](#задание-19-mediator)
 - [Задание 20. Memento](#задание-20-memento)
+- [Задание 21. Observer](#задание-21-observer)
 
 
 
@@ -821,6 +822,82 @@ DropdownMenuItem(
 2024-11-27 19:30:56.501 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение "Промышленный альпинист" для ООО "ТрансГеоСервис")
 2024-11-27 19:30:56.502 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 2
 ```
+
+<br>
+
+## **Задание 21. Observer** 
+
+
+```java
+// Паттерн Observer
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/01e4ce16907942f06486b993d1ac3f0b4cb2b106)
+
+**Паттерн обзервер реализован внутри андроид (androidx.lifecycle)**
+
+В моем коде он используется как LiveData (точнее как расширение MutableLiveData: public class MutableLiveData\<T> extends LiveData\<T>) вот тут:
+
+```java
+// Паттерн Observer  
+private val selectedDateMutableState = MutableLiveData(LocalDate.now())  
+val selectedDate: MutableLiveData<LocalDate?> = selectedDateMutableState
+```
+
+
+**Про LiveData. как устроена и почему обзервер**
+
+**Обзор LiveData внутри.**
+
+Внутри есть метод observe и removeObserver:
+```java
+@MainThread  
+public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer) {  
+    assertMainThread("observe");  
+
+    LifecycleBoundObserver wrapper = new LifecycleBoundObserver(owner, observer);  
+    ObserverWrapper existing = mObservers.putIfAbsent(observer, wrapper);  
+  ...
+    owner.getLifecycle().addObserver(wrapper);  
+}
+
+@MainThread  
+public void removeObserver(@NonNull final Observer<? super T> observer) {
+	removed.detachObserver();
+}
+```
+
+Когда значения внутри ЛайвДата будет обновлено(`setValue()` или `postValue()`) все активные наблюдатели получат уведомление:
+```java
+package androidx.lifecycle
+
+fun interface Observer<T> {  
+  
+    /**  
+     * Called when the data is changed to [value].  
+     */    fun onChanged(value: T)  
+}
+```
+
+```java
+private void considerNotify(ObserverWrapper observer) {  
+    observer.mLastVersion = mVersion;  
+    observer.mObserver.onChanged((T) mData);  
+}
+```
+
+Подписанная схема:
+![[Pasted image 20241127202536.png]]
+
+---
+
+еще интерфейс обзервер реализует медиатор:
+```java
+public class MediatorLiveData\<T> extends MutableLiveData\<T> {
+```
+
+
+<br>
 
 
  [наверх](#Оглавление) 

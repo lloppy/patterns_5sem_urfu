@@ -61,8 +61,7 @@
               "title": "singleton"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -245,8 +244,11 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "989e7160199fe3b5",
+  "active": "e6788d1509098f04",
   "lastOpenFiles": [
+    "backup/files/Pasted image 20241127202536.png",
+    "backup/files/Pasted image 20241127202534.png",
+    "backup/files/Pasted image 20241127201740.png",
     "README.md",
     "task.md",
     "backup/files/Pasted image 20241113203434.png",
@@ -289,8 +291,6 @@
     "backup/files/ievetrov_ru.pdf",
     "backup/files/Pasted image 20240910021620.png",
     "backup/files/Pasted image 20240910021607.png",
-    "backup/files/Pasted image 20240910021156.png",
-    "backup/files/thumb-1920-1168791.jpg",
     "backup/periodic/templates",
     "backup/templates/bin"
   ]
