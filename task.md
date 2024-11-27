@@ -18,6 +18,7 @@
 - [Задание 17. Interpreter](#задание-17-interpreter)
 - [Задание 18. Iterator](#задание-18-iterator)
 - [Задание 19. Mediator](#задание-19-mediator)
+- [Задание 20. Memento](#задание-20-memento)
 
 
 
@@ -710,7 +711,7 @@ class TextBox(mediator: Mediator) : UiElement(mediator) {
 ```
 
 
-гоги после взаимодействия с экраном (ввод текста и нажатия на кнопки): 
+логи после взаимодействия с экраном (ввод текста и нажатия на кнопки): 
 
 ```java
 Notify called with sender: TextBox, event: text_changed
@@ -721,10 +722,105 @@ Notify called with sender: TextBox, event: text_changed
 2024-11-20 22:31:03.444 14700-14700 TextDialog              com.lloppy.hapson                    E  Dialog dismissed
 ```
 
-
 <br>
 
+## **Задание 20. Memento** 
 
+
+```java
+// Паттерн Memento
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/01e4ce16907942f06486b993d1ac3f0b4cb2b106)
+
+
+1. Originator:
+```java
+data class AsnovaStudentsClass(  
+    val name: String = ""  
+) : Prototype<AsnovaStudentsClass> {  
+    fun createMemento(): AsnovaStudentsClassMemento {  
+        return AsnovaStudentsClassMemento(this.name)  
+    }  
+  
+    fun restoreMemento(memento: AsnovaStudentsClassMemento): AsnovaStudentsClass {  
+        return this.copy(name = memento.name)  
+    }  
+}
+```
+
+2. Caretaker 
+```java
+class AsnovaStudentsClassCaretaker {  
+    private val mementos = mutableListOf<AsnovaStudentsClassMemento>()
+```
+
+3. Memento 
+```java
+data class AsnovaStudentsClassMemento(  
+    val name: String  
+)
+```
+
+
+4. Использование в клиентском коде:
+Писала в прошлом проекте. Есть классы, которые админ может редиктировать.
+Когда админ нажимает на кнопку Удалить учебный класс-группу, значение сохраняется в list мементо. Паттерн нужнен чтобы потом можно было восстановить удаленую админом карточку:
+```java
+ClassCard(asnovaClass = asnovaClass, onClickDelete = {  
+    // Паттерн Memento использование  
+    caretaker.saveMemento(asnovaClass.createMemento())  
+    viewModel.removeClass(asnovaClass)  
+}) { selected ->  
+    selectedClass = selected  
+    showEditDialog = true  
+}
+```
+
+Вот тут можно отменить отмену через mеmento:
+```java
+DropdownMenuItem(  
+    text = { Text(text = "Отменить последнее изменение") },  
+    onClick = {  
+        caretaker.restoreMemento()?.let { memento ->  
+            selectedClass?.restoreMemento(memento)  
+            Toast.makeText(context, "Изменение отменено", Toast.LENGTH_SHORT).show()  
+        } ?: run {  
+            Toast.makeText(context, "Нет изменений для отмены", Toast.LENGTH_SHORT).show()  
+        }  
+        expanded = false  
+    })
+```
+
+Логи проекта. Сначала я удалила 7 карточек с классами-группами. Потом восстановила 5 штук:
+```java
+2024-11-27 19:30:42.696 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: выездное обучение по высоте для ООО "Атоммашкомплекс"
+2024-11-27 19:30:42.696 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 1
+2024-11-27 19:30:43.204 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение "Промышленный альпинист" для ООО "ТрансГеоСервис"
+2024-11-27 19:30:43.205 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 2
+2024-11-27 19:30:43.624 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение по высоте для ООО «ПСО «Теплит»
+2024-11-27 19:30:43.624 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 3
+2024-11-27 19:30:43.988 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение "Промышленный альпинист" для ЗАО "СервисГазификация"
+2024-11-27 19:30:43.989 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 4
+2024-11-27 19:30:44.362 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение по высоте и ОЗП для Атомтеплоэлектросети
+2024-11-27 19:30:44.362 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 5
+2024-11-27 19:30:44.790 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение по программе "Стропальщик"
+2024-11-27 19:30:44.790 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 6
+2024-11-27 19:30:45.298 12684-12684 MementoPatternTag       com.example.asnova                   I  saveMemento: Выездное обучение по профессии "Водитель аккумуляторного погрузчика до 4 кВт" для АО "Тепличное"
+2024-11-27 19:30:45.298 12684-12684 MementoPatternTag       com.example.asnova                   D  saveMemento - total size: 7
+2024-11-27 19:30:49.939 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение по профессии "Водитель аккумуляторного погрузчика до 4 кВт" для АО "Тепличное")
+2024-11-27 19:30:49.939 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 7
+2024-11-27 19:30:51.231 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение по программе "Стропальщик")
+2024-11-27 19:30:51.232 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 6
+2024-11-27 19:30:52.297 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение по высоте и ОЗП для Атомтеплоэлектросети)
+2024-11-27 19:30:52.297 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 5
+2024-11-27 19:30:53.515 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение "Промышленный альпинист" для ЗАО "СервисГазификация")
+2024-11-27 19:30:53.515 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 4
+2024-11-27 19:30:54.724 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение по высоте для ООО «ПСО «Теплит»)
+2024-11-27 19:30:54.724 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 3
+2024-11-27 19:30:56.501 12684-12684 MementoPatternTag       com.example.asnova                   I  restoreMemento: remove AsnovaStudentsClassMemento(name=Выездное обучение "Промышленный альпинист" для ООО "ТрансГеоСервис")
+2024-11-27 19:30:56.502 12684-12684 MementoPatternTag       com.example.asnova                   D  restoreMemento - total size: 2
+```
 
 
  [наверх](#Оглавление) 
