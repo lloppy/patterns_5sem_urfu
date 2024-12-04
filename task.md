@@ -20,6 +20,8 @@
 - [Задание 19. Mediator](#задание-19-mediator)
 - [Задание 20. Memento](#задание-20-memento)
 - [Задание 21. Observer](#задание-21-observer)
+- [Задание 22. State](#задание-22-state)
+- [Задание 23. Strategy](#задание-23-strategy)
 
 
 
@@ -898,8 +900,134 @@ private void considerNotify(ObserverWrapper observer) {
 public class MediatorLiveData\<T> extends MutableLiveData\<T> {
 ```
 
+<br>
+## **Задание 22. State** 
+
+
+```java
+// Паттерн State
+```
+
+[ссылка на коммит. в моем коде много стейтов, но отметила только в расписании один вариант использования](https://github.com/lloppy/My-Asnova/commit/b525e75ddf714cff213cc8278df194bc53dfb4a2)
+
+У меня были уже стейты в приложении. Всю архитектуру экрана я делила на три части: Screen, ViewModel, State. State нужен чтобы отображать текущее состояние экрана при взаимодейстии с бекендом. Если бекенд грузит - отображаем загрузку, если ошибка - ошибку, если все хорошо - выводим данные. 
+
+
+1. Контекст - экран расписания fun ScheduleScreen:
+
+```java
+@Composable  
+fun ScheduleScreen(  
+    externalRouter: Router,  
+    context: Context,  
+    lifecycleOwner: LifecycleOwner,  
+    viewModel: ScheduleScreenViewModel = hiltViewModel()  
+) {  
+    val state = viewModel.state
+```
+
+Если загрузка - показываем базовый экран skeleton():
+```java
+@Composable  
+fun SkeletonScreen(  
+    isLoading: Boolean,  
+    skeleton: @Composable () -> Unit,  
+    content: @Composable () -> Unit  
+) {  
+    if (isLoading)  
+        skeleton()  
+    else  
+        content()  
+}
+```
+
+Если ошибка - выводим тектом поверх экрана:
+```java
+if (state.value.error.isNotBlank()) {  
+    item {  
+        Text(  
+            text = state.value.error,  
+            color = MaterialTheme.colorScheme.error,  
+            textAlign = TextAlign.Center,  
+            modifier = Modifier  
+                .fillMaxWidth()  
+                .padding(horizontal = 20.dp)  
+                .align(Alignment.Center)  
+        )  
+    }  
+}
+```
+
+2. Стейт: 
+
+```java
+data class ScheduleState(  
+    var privateSchedule: Map<LocalDate, List<ScheduleAsnovaPrivate>> = mutableMapOf(),  
+    var siteSchedule: List<ScheduleAsnovaSite> = emptyList(),  
+    val error: String = "",  
+    val loading: Boolean = false,  
+    var currentScheduleIsPrivate: Boolean = true  
+)
+```
+
+3. Конкретные стейты:
+Их три вида: ошибка, загрузка и успех
+
+```java
+sealed class Resource<T>(  
+    val data: T? = null,  
+    val message: String? = null,  
+) {  
+    class Success<T>(data: T?) : Resource<T>(data)  
+    class Error<T>(message: String, data: T? = null) : Resource<T>(data, message)  
+    class Loading<T>(data: T? = null) : Resource<T>(data)  
+}
+```
+
+Пример использования-загрузки данных с сайта во **ViewModel-классе**:
+```java
+private fun loadScheduleFromSite() {  
+    getScheduleFromSiteUseCase(callback = { result ->  
+        when (result) {  
+            is Resource.Loading -> {  
+                _state.value = ScheduleState(loading = true)  
+            }  
+  
+            is Resource.Success -> {  
+                _state.value = ScheduleState(siteSchedule = result.data ?: emptyList())  
+                val temp = mutableListOf<ScheduleAsnovaSite>()  
+                for (item in _state.value.siteSchedule) {  
+                    temp.add(item)  
+                }  
+                _state.value.siteSchedule = temp  
+            }  
+  
+            is Resource.Error -> {  
+                _state.value = ScheduleState(  
+                    error = result.message ?: "An unexpected error occurred"  
+                )  
+            }  
+        }  
+    })  
+}
+```
+
+
+
+
 
 <br>
 
+## **Задание 23. Strategy** 
+
+
+```java
+// Паттерн Strategy
+```
+
+[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/bc8a32dd5635bb478472c0fc6fda684c72b23b13)
+
+
+<br>
 
  [наверх](#Оглавление) 
