@@ -901,6 +901,7 @@ public class MediatorLiveData\<T> extends MutableLiveData\<T> {
 ```
 
 <br>
+
 ## **Задание 22. State** 
 
 
@@ -908,9 +909,9 @@ public class MediatorLiveData\<T> extends MutableLiveData\<T> {
 // Паттерн State
 ```
 
-[ссылка на коммит. в моем коде много стейтов, но отметила только в расписании один вариант использования](https://github.com/lloppy/My-Asnova/commit/b525e75ddf714cff213cc8278df194bc53dfb4a2)
+[ссылка на коммит. опять в старом репо, в новом я только начала модули делать. во всем старом приложении много стейтов, но отметила только в расписании один вариант использования](https://github.com/lloppy/My-Asnova/commit/b525e75ddf714cff213cc8278df194bc53dfb4a2)
 
-У меня были уже стейты в приложении. Всю архитектуру экрана я делила на три части: Screen, ViewModel, State. State нужен чтобы отображать текущее состояние экрана при взаимодейстии с бекендом. Если бекенд грузит - отображаем загрузку, если ошибка - ошибку, если все хорошо - выводим данные. 
+У меня были уже стейты в приложении. Всю архитектуру экранов приложения (всех экранов) я делила на три части: Screen, ViewModel, State (так у каждого экрана). State нужен чтобы отображать текущее состояние экрана при взаимодейстии с бекендом. Если бекенд грузит - отображаем загрузку, если ошибка - ошибку, если все хорошо - выводим данные. 
 
 
 1. Контекст - экран расписания fun ScheduleScreen:
@@ -1013,9 +1014,6 @@ private fun loadScheduleFromSite() {
 ```
 
 
-
-
-
 <br>
 
 ## **Задание 23. Strategy** 
@@ -1025,7 +1023,64 @@ private fun loadScheduleFromSite() {
 // Паттерн Strategy
 ```
 
-[ссылка на коммит](https://github.com/lloppy/My-Asnova/commit/bc8a32dd5635bb478472c0fc6fda684c72b23b13)
+[ссылка на коммит](https://github.com/lloppy/hapson/commit/d9f3c384e4ac3ab8d37315d5ebb166b67294a9da)
+
+делала по этому туториалу: [Site Unreachable](https://medium.com/android-dev-hacks/strategy-design-pattern-android-real-life-example-a055bb0353b3) 
+
+делала фильтрацию, по которой можно будет находить курс. теперь можно фильтровать по (1.) организации и по (2.) имени самого курса. 
+
+
+1. Контекст - сам экран фильтрации
+```java
+fun CoursesSearch() {
+
+	TextField(  
+	    value = searchQuery,  
+	    onValueChange = {  
+	        searchQuery = it  
+	  
+	        // Паттерн State  
+	        val nameFilter = NameFilter(searchQuery)  
+	        val organizationFilter = OrganizationFilter(selectedOrganizationId)  
+	  
+	        val filterManager = FilterManager()  
+	        filteredCourses = filterManager.applyFilters(  
+	            listOf(nameFilter, organizationFilter),  
+	            originalCourses  
+	        )  
+	    },  
+	    label = { Text("Поиск курсов") },  
+	    modifier = Modifier.fillMaxWidth()  
+)
+```
+
+2. Стратегия:
+```java
+// Паттерн State  
+interface Filterable {  
+    fun applyFilter(courses: List<Course>): List<Course>  
+}
+```
+
+3. Конкретные стратегии:
+- class OrganizationFilter
+- class NameFilter
+
+```java
+// Паттерн State  
+class NameFilter(private var nameQuery: String?) : Filterable {  
+    override fun applyFilter(courses: List<Course>): List<Course> {  
+        return if (!nameQuery.isNullOrEmpty()) {  
+            courses.filter { it.name.contains(nameQuery!!, ignoreCase = true) }  
+        } else {  
+            courses  
+        }  
+    }  
+}
+```
+
+**Зачем применять паттерн в коде:**
+он обеспечивает  взаимозаменяемость фильтров = стратегию фильтрации можно сменить "на ходу" (например: в ExposedDropdownMenuBox или в TextField вводом)
 
 
 <br>
