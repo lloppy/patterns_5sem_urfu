@@ -1023,7 +1023,7 @@ private fun loadScheduleFromSite() {
 // Паттерн Strategy
 ```
 
-[ссылка на коммит](https://github.com/lloppy/hapson/commit/d9f3c384e4ac3ab8d37315d5ebb166b67294a9da)
+[ссылка на коммит](https://github.com/lloppy/hapson/commit/c30893c32111c814a1730e5e0973e6b6d015fb16)
 
 делала по этому туториалу: [Site Unreachable](https://medium.com/android-dev-hacks/strategy-design-pattern-android-real-life-example-a055bb0353b3) 
 
@@ -1039,7 +1039,7 @@ fun CoursesSearch() {
 	    onValueChange = {  
 	        searchQuery = it  
 	  
-	        // Паттерн State  
+	        // Паттерн Strategy  
 	        val nameFilter = NameFilter(searchQuery)  
 	        val organizationFilter = OrganizationFilter(selectedOrganizationId)  
 	  
@@ -1056,7 +1056,7 @@ fun CoursesSearch() {
 
 2. Стратегия:
 ```java
-// Паттерн State  
+// Паттерн Strategy  
 interface Filterable {  
     fun applyFilter(courses: List<Course>): List<Course>  
 }
@@ -1067,7 +1067,7 @@ interface Filterable {
 - class NameFilter
 
 ```java
-// Паттерн State  
+// Паттерн Strategy  
 class NameFilter(private var nameQuery: String?) : Filterable {  
     override fun applyFilter(courses: List<Course>): List<Course> {  
         return if (!nameQuery.isNullOrEmpty()) {  
