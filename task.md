@@ -22,7 +22,8 @@
 - [Задание 21. Observer](#задание-21-observer)
 - [Задание 22. State](#задание-22-state)
 - [Задание 23. Strategy](#задание-23-strategy)
-
+- [Задание 24. Visitor](#задание-24-visitor)
+- [Задание 25. Template method](#задание-25-template-method)
 
 
 ## **Задание 1**
@@ -1082,6 +1083,60 @@ class NameFilter(private var nameQuery: String?) : Filterable {
 **Зачем применять паттерн в коде:**
 он обеспечивает  взаимозаменяемость фильтров = стратегию фильтрации можно сменить "на ходу" (например: в ExposedDropdownMenuBox или в TextField вводом)
 
+
+<br>
+
+## **Задание 24. Visitor** 
+
+
+```java
+// Паттерн Visitor
+```
+
+[ссылка на коммит]()
+
+
+
+
+<br>
+
+## **Задание 25. Template method** 
+
+
+```java
+// Паттерн Template method
+```
+
+[ссылка на коммит](https://github.com/lloppy/hapson/commit/ffb81d84f2444ce419fd43d92c672315be1c4626)
+
+Сам жизненный цикл (android lifecycle) может быть рассмотрен как Template method. Эти методы всегда неизменны и всегда присутствуют в любом андроид приложении:
+
+[![Image](https://www.edureka.co/blog/wp-content/uploads/2019/08/Activity-Life-Cycle-Android-Activity-Life-Cycle-Edureka-1.png)
+
+- **onCreate()**: вызывается при создании Activity, используется для инициализации компонентов интерфейса и выполнения одноразовых операций.
+- **onStart()**: вызывается перед тем, как Activity станет видимой для пользователя, подготавливает интерфейс к отображению.
+- **onResume()**: вызывается, когда Activity становится активной и готовой к взаимодействию с пользователем.
+- **onPause()**: вызывается, когда Activity теряет фокус, позволяет сохранить состояние и освободить ресурсы.
+- **onStop()**: вызывается, когда Activity больше не видна, используется для освобождения ресурсов, которые не нужны в фоновом режиме.
+- **onDestroy()**: вызывается перед уничтожением Activity, позволяет выполнить финальные операции по очистке ресурсов
+
+Фиксирования инвариантная часть алгоритма - методы onCreate, onStart, onResume, onPause, onStop, onDestroy, при этом реализация конкретики может меняться в подклассах.
+
+1. Рассмотрим метод onCreate()
+
+	- По **дефолту** метод выглядит так: 
+
+![Image](https://sun9-47.userapi.com/s/v1/ig2/3nujxp2CD2N4NQcPLjX3IemEfxC3btBaLPgNx84nOINeKlE-DYUPkWpTr02LWPzQbCMBtle3UX-qFkOxme1TlQPQ.jpg?quality=95&as=32x18,48x28,72x41,108x62,160x92,240x138,360x206,480x275,540x310,640x367,720x413,987x566&from=bu&u=Z2BE_iLaBPoUl6s2T8SMcn1U1fnj6uxKPEfvaJDgICc&cs=987x566)
+
+- Но при создании приложения мы **изменяем** этот метод, где определяем ключевые фукнции приложения, вот так (мое приложение): 
+
+![image](https://sun9-50.userapi.com/impg/UBaDomYdHmrN-tQWLdAF2zesF5mPKR0Fa16H4A/uo_TbLgh4wo.jpg?size=1004x888&quality=95&sign=8db80ac25aa83c64bf16171304e2cf78&type=album)
+
+Чтобы поменять логику внутри методов, нужно переопределить методы ComponentActivity:
+
+![image](https://sun9-8.userapi.com/impg/2VkkfpTMYn6HLouWXsSyznRMNaLsb4Pu9Gb1dw/aWbC3Zro3zQ.jpg?size=564x855&quality=95&sign=e9d2320adaf4bd1727c952040a2a7912&type=album)
+
+методы обеспечивают инвариантную часть алгоритма, поэтому андроидщикам можно переопределять их в подклассах для реализации специфической логики приложения (общий алгоритм остается неизменным, а детали могут варьироваться = template method)
 
 <br>
 
