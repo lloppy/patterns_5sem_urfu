@@ -1093,10 +1093,33 @@ class NameFilter(private var nameQuery: String?) : Filterable {
 // Паттерн Visitor
 ```
 
-[ссылка на коммит]()
+[FileVisitor (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileVisitor.html)
 
+В JDK есть интерфейс для Visitorа файлов:
 
+1. Visitor Interface - интерфейс для посетителей - определяет логику обработки для каждого типа объекта (например, файлов и директорий). Принимает универсальный тип T t:
+```java
+package java.nio.file;  
+  
+public interface FileVisitor <T> {  
+    java.nio.file.FileVisitResult preVisitDirectory(T t, java.nio.file.attribute.BasicFileAttributes basicFileAttributes) throws java.io.IOException;  
+  
+    java.nio.file.FileVisitResult visitFile(T t, java.nio.file.attribute.BasicFileAttributes basicFileAttributes) throws java.io.IOException;  
+  
+    java.nio.file.FileVisitResult visitFileFailed(T t, java.io.IOException e) throws java.io.IOException;  
+  
+    java.nio.file.FileVisitResult postVisitDirectory(T t, java.io.IOException e) throws java.io.IOException;  
+}
+```
 
+2. Конкретные посетители:
+Например SimpleFileVisitor, который реализует интерфейс FileVisitor и предоставляет поведение для обработки узлов. Плюс можно создать собственный класс-посетитель, который наследует SimpleFileVisitor, и переопределить только те методы, которые нужны нам.
+
+![вот картинка](https://sun9-51.userapi.com/impg/kkY9s70cnqXlrYhr_i0rbRqLiYmMhOORogKVYg/xjxsTttng7s.jpg?size=773x515&quality=95&sign=276f199e0a26491d5d0510c3385d73ea&type=album)
+
+3. Элементы. 
+
+Элементы тут — это файлы и директории, которые будут обрабатываются с помощью методов посетителя. В них нужно реализовать метод accept, или использовать метод walkFileTree (Метод walkFileTree() позволяет обойти дерево файлов и поддиректорий передаваемого ему в качестве параметра элемента Path)
 
 <br>
 
